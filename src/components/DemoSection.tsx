@@ -560,26 +560,28 @@ const DemoSection = () => (
         </motion.div>
 
         <motion.div
-          className="max-w-3xl mx-auto"
+          className="max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
         >
-          <div className="bg-card rounded-card-lg shadow-card overflow-hidden border border-border">
-            <div className="flex items-center gap-2 px-4 py-3 bg-muted border-b border-border">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-destructive/60" />
-                <div className="w-3 h-3 rounded-full bg-accent/80" />
-                <div className="w-3 h-3 rounded-full bg-success/60" />
+          <div className="bg-card rounded-card-lg shadow-card overflow-hidden border border-border mx-auto w-full">
+            <div className="flex items-center gap-2 px-3 sm:px-4 py-3 bg-muted border-b border-border">
+              <div className="flex gap-1.5 shrink-0">
+                <div className="w-2.5 h-2.5 sm:w-3 h-3 rounded-full bg-destructive/60" />
+                <div className="w-2.5 h-2.5 sm:w-3 h-3 rounded-full bg-accent/80" />
+                <div className="w-2.5 h-2.5 sm:w-3 h-3 rounded-full bg-success/60" />
               </div>
-              <div className="flex-1 mx-8">
-                <div className="bg-card rounded-pill px-4 py-1.5 text-xs text-muted-foreground text-center border border-border">
+              <div className="flex-1 mx-2 sm:mx-8 min-w-0">
+                <div className="bg-card rounded-all px-3 sm:px-4 py-1.5 text-[10px] sm:text-xs text-muted-foreground text-center border border-border truncate">
                   app.petvault.com/timeline
                 </div>
               </div>
             </div>
-            <AnimatedTimeline />
+            <div className="p-3 sm:p-5">
+              <AnimatedTimeline />
+            </div>
           </div>
         </motion.div>
       </div>

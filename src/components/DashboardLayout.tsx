@@ -43,6 +43,9 @@ import {
 import {
     Sheet,
     SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet";
 import { useToast } from '@/hooks/use-toast';
@@ -96,6 +99,7 @@ export function DashboardLayout({
     const [petToDelete, setPetToDelete] = useState<string | null>(null);
     const [activeReminder, setActiveReminder] = useState<any>(null);
     const [reminderBannerDismissed, setReminderBannerDismissed] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isExporting, setIsExporting] = useState(false);
 
     const selectedPet = pets.find((p) => p.id === selectedPetId);
@@ -293,13 +297,17 @@ export function DashboardLayout({
 
                         {/* Mobile Menu Button - Using Sheet */}
                         <div className="lg:hidden">
-                            <Sheet>
+                            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                                 <SheetTrigger asChild>
                                     <Button variant="ghost" size="icon" className="rounded-full">
                                         <Menu className="w-6 h-6 text-[#0E2F44]" />
                                     </Button>
                                 </SheetTrigger>
                                 <SheetContent side="left" className="w-[85vw] sm:w-[350px] p-0 border-none rounded-r-[32px] overflow-hidden">
+                                    <SheetHeader className="sr-only">
+                                        <SheetTitle>Mobile Navigation Menu</SheetTitle>
+                                        <SheetDescription>Access your pet profiles and dashboard categories</SheetDescription>
+                                    </SheetHeader>
                                     <ScrollArea className="h-full">
                                         <div className="p-6">
                                             {/* My Pets Section in Mobile Menu */}
@@ -320,6 +328,7 @@ export function DashboardLayout({
                                                         key={pet.id}
                                                         onClick={() => {
                                                             onPetSelect(pet.id);
+                                                            setIsMenuOpen(false);
                                                         }}
                                                         className={`w-full group flex items-center gap-3 p-3 rounded-[16px] transition-all duration-300 cursor-pointer ${selectedPetId === pet.id
                                                             ? 'bg-[#49B3E8]/10 border border-[#49B3E8]/30 shadow-sm'
@@ -348,6 +357,7 @@ export function DashboardLayout({
                                                             key={category.id}
                                                             onClick={() => {
                                                                 onCategorySelect(category.id);
+                                                                setIsMenuOpen(false);
                                                             }}
                                                             className={`w-full flex items-center gap-3 px-4 py-3 rounded-full transition-all duration-300 text-sm font-medium ${selectedCategory === category.id
                                                                 ? 'bg-[#49B3E8] text-white'
@@ -511,7 +521,7 @@ export function DashboardLayout({
                             </div>
 
                             {profile?.plan_type === 'basic' && !bannerDismissed && (
-                                <div className="mt-6 p-4 bg-gradient-to-r from-[#0E2F44] to-[#1a4a6b] rounded-[20px] flex items-center justify-between shadow-lg shadow-[#0E2F44]/10 relative overflow-hidden group">
+                                <div className="mt-6 p-4 sm:p-5 bg-gradient-to-r from-[#0E2F44] to-[#1a4a6b] rounded-[24px] flex flex-col sm:flex-row items-center justify-between shadow-lg shadow-[#0E2F44]/10 relative overflow-hidden group gap-4">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16 group-hover:scale-110 transition-transform duration-500"></div>
                                     <div className="flex items-center gap-4 relative z-10">
                                         <div className="w-10 h-10 rounded-full bg-[#49B3E8]/20 flex items-center justify-center text-[#49B3E8]">

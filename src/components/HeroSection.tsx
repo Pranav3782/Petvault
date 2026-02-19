@@ -244,7 +244,7 @@ const HeroSection = () => {
                 <Button
                   variant="hero"
                   size="default"
-                  className="h-12 px-6 text-[15px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-[0_8px_20px_rgba(50,195,108,0.3)] active:scale-[0.98]"
+                  className="h-11 sm:h-12 px-6 text-[14px] sm:text-[15px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-[0_8px_20px_rgba(50,195,108,0.3)] active:scale-[0.98]"
                   asChild
                 >
                   <Link to="/signup">
@@ -254,7 +254,7 @@ const HeroSection = () => {
                 <Button
                   variant="hero-outline"
                   size="default"
-                  className="h-12 px-6 text-[15px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-[0_4px_16px_rgba(73,179,232,0.2)] active:scale-[0.98]"
+                  className="h-11 sm:h-12 px-6 text-[14px] sm:text-[15px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.01] hover:shadow-[0_4px_16px_rgba(73,179,232,0.2)] active:scale-[0.98]"
                   asChild
                 >
                   <a href="#product-demo">

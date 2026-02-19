@@ -8,6 +8,7 @@ import {
   SheetTrigger,
   SheetHeader,
   SheetTitle,
+  SheetDescription,
 } from "@/components/ui/sheet";
 
 const navLinks = [
@@ -92,7 +93,7 @@ const Navbar = () => {
                   <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[85vw] sm:w-[350px] rounded-l-[32px] border-none p-6">
+              <SheetContent side="top" className="w-full rounded-b-[32px] border-none p-6 pt-12">
                 <SheetHeader className="text-left mb-8">
                   <SheetTitle className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full bg-[#F6C343] flex items-center justify-center">
@@ -100,6 +101,9 @@ const Navbar = () => {
                     </div>
                     PetVault
                   </SheetTitle>
+                  <SheetDescription className="sr-only">
+                    Navigation menu for mobile devices
+                  </SheetDescription>
                 </SheetHeader>
                 <div className="space-y-2">
                   {navLinks.map((link) => (

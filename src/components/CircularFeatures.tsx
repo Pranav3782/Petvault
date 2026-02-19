@@ -40,17 +40,17 @@ const CircularFeatures = () => (
           {features.map((f, i) => (
             <motion.div
               key={f.title}
-              className="bg-card rounded-card-lg p-6 text-center shadow-card hover:shadow-card-hover transition-all duration-200"
+              className="bg-card rounded-[24px] p-8 sm:p-10 text-center shadow-card hover:shadow-card-hover transition-all duration-200"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: [0.4, 0, 0.2, 1] }}
               whileHover={{ scale: 1.02, y: -4 }}
             >
-              <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                <f.icon className="w-10 h-10 text-primary" />
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                <f.icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
               </div>
-              <h3 className="text-card-title text-foreground mb-2 font-poppins">{f.title}</h3>
+              <h3 className="text-lg font-bold text-foreground mb-2 font-poppins">{f.title}</h3>
               <p className="text-sm text-muted-foreground mb-4">{f.desc}</p>
               <span className="inline-block bg-success/10 text-success text-xs font-semibold px-3 py-1 rounded-pill">
                 From {f.price}

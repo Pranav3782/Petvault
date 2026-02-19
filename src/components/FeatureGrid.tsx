@@ -113,7 +113,7 @@ const FeatureGrid = () => (
             >
               {/* Card */}
               <motion.div
-                className="bg-white rounded-[24px] p-8 lg:p-10 h-full flex flex-col items-center text-center relative"
+                className="bg-white rounded-[24px] p-6 sm:p-8 lg:p-10 h-full flex flex-col items-center text-center relative"
                 style={{
                   boxShadow: "0 20px 40px rgba(0,0,0,0.08), 0 0 40px rgba(74,159,216,0.15)",
                 }}
@@ -124,22 +124,22 @@ const FeatureGrid = () => (
                 }}
               >
                 {/* Icon Container */}
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#E8F4F9] to-[#D5E9F2] flex items-center justify-center mb-6">
-                  <Icon className="w-12 h-12 text-[#4A9FD8]" strokeWidth={1.5} />
+                <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full bg-gradient-to-br from-[#E8F4F9] to-[#D5E9F2] flex items-center justify-center mb-6">
+                  <Icon className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#4A9FD8]" strokeWidth={1.5} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-[#0E2F44] mb-3 font-poppins">
+                <h3 className="text-base sm:text-lg font-bold text-[#0E2F44] mb-3 font-poppins">
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-[#6F8A96] leading-relaxed mb-6 flex-grow">
+                <p className="text-xs sm:text-sm text-[#6F8A96] leading-relaxed mb-6 flex-grow">
                   {feature.description}
                 </p>
 
                 {/* Green Badge */}
-                <div className="inline-block bg-[#32C36C] text-white text-xs font-semibold px-4 py-1.5 rounded-full">
+                <div className="inline-block bg-[#32C36C] text-white text-[10px] sm:text-xs font-semibold px-4 py-1.5 rounded-full">
                   {feature.badge}
                 </div>
               </motion.div>

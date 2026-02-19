@@ -135,10 +135,10 @@ const CommunitySection = memo(() => {
         {/* Floating card */}
         <motion.div
           variants={childVariants}
-          className="max-w-[1000px] mx-auto bg-card rounded-[28px] p-10 md:p-[60px]"
+          className="max-w-[1000px] mx-auto bg-card rounded-[28px] p-6 sm:p-10 md:p-[60px]"
           style={{ boxShadow: "0 15px 40px rgba(0,0,0,0.06)" }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             {/* Left — Illustration + Text */}
             <div className="text-center lg:text-left">
               <SoftIllustration />

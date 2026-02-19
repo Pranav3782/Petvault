@@ -76,7 +76,7 @@ export default function Signup() {
     ];
 
     return (
-        <div className="h-screen overflow-hidden bg-[#F2FAFD] font-poppins flex items-center">
+        <div className="min-h-screen bg-[#F2FAFD] font-poppins flex items-center py-12 lg:py-0">
             <div className="container mx-auto px-4 h-full flex items-center">
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 max-w-[1100px] mx-auto w-full">
 
